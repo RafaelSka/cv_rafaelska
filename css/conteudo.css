@@ -1,0 +1,55 @@
+.acordeon {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    border: 2px solid whitesmoke;
+    margin: 1rem 0;
+    border-top-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+    
+}
+
+.acordeon .acionador {
+    font-size: 1.5rem;
+    font-weight: 700;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: transparent;
+    color: whitesmoke;
+    border: none;
+    border-top-left-radius: 27px;
+    border-bottom-right-radius: 27px;
+    transition: .5s;
+}
+
+.acordeon.open,
+.acordeon .acionador:hover {
+    background-color: whitesmoke;
+    color: black;
+    border: none;
+    border-top-left-radius: 27px;
+    border-bottom-right-radius: 27px;
+    cursor: pointer;
+}
+
+.acordeon .conteudo {
+    overflow: hidden;
+    height: 0;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;    
+}
+
+.acordeon.open .conteudo {
+    display: block;
+    padding: 0 1rem 1rem 2rem;
+    height: auto;
+    opacity: 1;
+}
+
+.acordeon.open .acionador {
+    color: black;
+}
+

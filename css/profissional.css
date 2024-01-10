@@ -1,0 +1,42 @@
+li {
+    padding: .6rem;
+}
+
+.conteudo .tragetoria .cargo::before {
+    display: inline-block;
+    content: '';
+    width: 30px;
+    height: 30px;
+    margin-right: .5rem;
+    background-size: contain;
+}
+
+.conteudo .tragetoria .cargo::before{
+    background-image: url('../icones/cargo.png');
+}
+
+.conteudo .tragetoria .data::before {
+    display: inline-block;
+    content: '';
+    width: 20px;
+    height: 20px;
+    margin-right: .5rem;
+    background-size: contain;
+}
+
+.conteudo .tragetoria .data::before{
+    background-image: url('../icones/data.png');
+}
+
+.conteudo .tragetoria .descricao::before {
+    display: inline-block;
+    content: '';
+    width: 20px;
+    height: 20px;
+    margin-right: .5rem;
+    background-size: contain;
+}
+
+.conteudo .tragetoria .descricao::before{
+    background-image: url('../icones/descricao.png');
+}

@@ -1,0 +1,39 @@
+* {
+    box-sizing: border-box;
+    font-family: "Open Sans", sans-serif ;
+}
+
+body {
+    background-color: #111111;
+    color: whitesmoke;
+}
+
+.main {
+    margin: 1rem;
+    padding: 1rem;
+    border: 2px solid;
+    border-bottom-right-radius: 30px;
+    border-top-left-radius: 30px;
+}
+
+.main::before {
+    content: '';
+    background-image: url('../image/background.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100vw;
+    height: 100vh;
+    display: inline-block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    text-align: center;
+}
+
+@media only screen and (min-width: 800px) {
+    .main {
+        max-width: 1024px;
+        margin: 15px auto;
+    }
+}
