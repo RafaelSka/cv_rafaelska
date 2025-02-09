@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="css/portfolio.css">
     <link rel="stylesheet" href="css/profissional.css">
     <link rel="stylesheet" href="css/habilidades.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
 
     <title>Portifólio Rafael S Amaral</title>
 
@@ -189,7 +190,7 @@
 
         <section class = "acordeon">
             
-            <button class = "acionador" type="button">Tragetória Profissional</button>
+            <button class = "acionador" type="button">Trajetória Profissional</button>
                 
             <div class="conteudo">
                 <ul class="tragetoria">
@@ -253,9 +254,45 @@
 
     </div>
 
-    <script src="js/acordeon.js"></script>
-    <script src="js/api.js"></script>
-    <script src="js/main.js"></script>
-    
-</body>
-</html>
+<div style="text-align: center; margin-top: 20px;">
+    <button id="printPdf" style="background-color: #28a745; color: white; padding: 10px 20px; border: none; border-radius: 4px; cursor: pointer; font-size: 16px;">
+        "Antes de clicar aqui, expanda as abas que deseja incluir na impressão em PDF."
+    </button>
+</div>
+
+<div class="main" id="content">
+    <!-- Todo o conteúdo do seu HTML aqui -->
+</div>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        // Ativação do acordeão
+        document.querySelectorAll(".acionador").forEach(function (botao) {
+            botao.addEventListener("click", function () {
+                var conteudo = this.nextElementSibling;
+                conteudo.classList.toggle("mostrar");
+            });
+        });
+
+        // Função de impressão abrindo os acordeões antes de imprimir
+        var printButton = document.getElementById("printPdf");
+
+        if (printButton) {
+            printButton.addEventListener("click", function () {
+                document.querySelectorAll(".conteudo").forEach(function (content) {
+                    content.classList.add("mostrar");
+                });
+
+                setTimeout(function () {
+                    window.print();
+                }, 500);
+            });
+        } else {
+            console.error("Botão de impressão não encontrado!");
+        }
+    });
+</script>
+
+<script src="js/acordeon.js"></script>
+<script src="js/api.js"></script>
+<script src="js/main.js"></script>
